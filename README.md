@@ -6,7 +6,7 @@ Welcome to the Google Cloud [BigQuery](https://cloud.google.com/bigquery/docs) N
 
 ## Overview
 
-The repository contains [Notebooks](https://github.com/google/bigquery-notebooks/tree/main/notebooks) and [Tutorials](https://github.com/google/bigquery-notebooks/tree/main/tutorials) that demonstrate how to develop and manage data and ML workflow using Google Cloud BigQuery. 
+The repository contains [Notebooks](https://github.com/google/bigquery-notebooks/tree/main/notebooks) that demonstrate how to develop and manage data and ML workflow using Google Cloud BigQuery. 
 
 ## Contributing
 
