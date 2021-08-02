@@ -1,0 +1,25 @@
+name: ci
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  run-linters:
+    name: notebook format and lint
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Set up Python
+      uses: actions/setup-python@v2
+    - name: Fetch pull request branch
+      uses: actions/checkout@v2
+    - name: Fetch base master branch
+      run: git fetch -u "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY" main:main
+    - name: Install requirements
+      run: python3 -m pip install -U -r .github/workflows/linter/requirements.txt
+    - name: Run linters
+      uses: wearerequired/lint-action@v1
+      with:
+        black: true
+        flake8: true
