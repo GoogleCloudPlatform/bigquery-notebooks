@@ -1,1 +1,1 @@
-bigquery-notebooks/notebooks/official
+GoogleCloudPlatform/bigquery-notebooks/notebooks/official
