@@ -1,3 +1,5 @@
+name: header-checker-lint
+on: pull_request
 allowedCopyrightHolders:
   - 'Google LLC'
 allowedLicenses:

@@ -17,7 +17,7 @@ import nbformat
 from nbconvert.preprocessors import ExecutePreprocessor, CellExecutionError
 import os
 import errno
-from NotebookProcessors import RemoveNoExecuteCells, UpdateVariablesPreprocessor
+from notebook_processors import RemoveNoExecuteCells, UpdateVariablesPreprocessor
 from typing import Dict
 import papermill as pm
 
