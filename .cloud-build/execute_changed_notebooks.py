@@ -18,7 +18,7 @@ import subprocess
 from pathlib import Path
 from typing import Dict, List, Optional
 
-import execute_notebooks
+import execute_notebook
 
 
 def run_changed_notebooks(
@@ -92,7 +92,7 @@ def run_changed_notebooks(
 
             # TODO: Handle cases where multiple notebooks have the same name
             try:
-                execute_notebooks.execute_notebook(
+                execute_notebook.execute_notebook(
                     notebook_file_path=notebook,
                     output_file_folder=artifacts_path,
                     replacement_map={
