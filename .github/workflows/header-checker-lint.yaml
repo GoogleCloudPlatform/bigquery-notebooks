@@ -1,0 +1,11 @@
+name: header-checker-lint
+on: pull_request
+allowedCopyrightHolders:
+  - 'Google LLC'
+allowedLicenses:
+  - 'Apache-2.0'
+  - 'MIT'
+  - 'BSD-3'
+sourceFileExtensions:
+  - 'py'
+  - 'ipynb'
