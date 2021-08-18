@@ -1,0 +1,10 @@
+tensorflow==2.4.0
+tfx==0.25.0
+apache-beam[gcp]
+google-cloud-bigquery 
+pyarrow
+google-auth 
+google-api-python-client 
+google-api-core
+scann
+kfp==1.1.2

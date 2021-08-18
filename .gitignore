@@ -122,6 +122,12 @@ venv.bak/
 # Rope project settings
 .ropeproject
 
+# Analytics Componetized Patterns
+**/*.cpython-37..pyc
+**/*.sqllite
+**/*.tar.gz
+retail/recommendation-system/bqml-scann/vocabulary.txt
+
 # mkdocs documentation
 /site
 
