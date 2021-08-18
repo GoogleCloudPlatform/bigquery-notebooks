@@ -98,7 +98,7 @@ if [ ${#notebooks[@]} -gt 0 ]; then
                 python3 -m tensorflow_docs.tools.nbfmt --remove_outputs "$notebook"
                 NBFMT_RTN=$?
                 echo "Running flake8..."
-                python3 -m nbqa flake8 "$notebook" --show-source --ignore=W291 --extend-ignore=W391,E501,F821,E402,F404,W503,E203 --nbqa-mutate
+                python3 -m nbqa flake8 "$notebook" --show-source --extend-ignore=W391,E501,F821,E402,F404,W503,W291,E203 --nbqa-mutate
                 FLAKE8_RTN=$?                 
             fi
 
