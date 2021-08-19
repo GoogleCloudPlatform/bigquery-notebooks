@@ -82,11 +82,11 @@ if [ ${#notebooks[@]} -gt 0 ]; then
                 python3 -m nbqa isort "$notebook" --check
                 ISORT_RTN=$?
                 echo "Running flake8..."
-                python3 -m nbqa flake8 "$notebook" --show-source --extend-ignore=W391,E501,F821,E402,F404,W503,W291,E203 --per-file-ignores='notebooks/official/template_notebooks/bigquery_command_line_tool.ipynb:E999,E111,E113'
+                python3 -m nbqa flake8 "$notebook" --show-source --extend-ignore=W391,E501,F821,E402,F404,W503,W291,E203 --nbqa-exclude='notebooks/official/template_notebooks/bigquery_command_line_tool.ipynb'
                 FLAKE8_RTN=$?
             else
                 echo "Running black..."
-                python3 -m nbqa black "$notebook" --nbqa-mutate
+                python3 -m nbqa black "$notebook" --nbqa-mutate --nbqa-exclude='notebooks/official/template_notebooks/bigquery_command_line_tool.ipynb'
                 BLACK_RTN=$?            
                 echo "Running pyupgrade..."
                 python3 -m nbqa pyupgrade "$notebook" --nbqa-mutate
@@ -98,7 +98,7 @@ if [ ${#notebooks[@]} -gt 0 ]; then
                 python3 -m tensorflow_docs.tools.nbfmt --remove_outputs "$notebook"
                 NBFMT_RTN=$?
                 echo "Running flake8..."
-                python3 -m nbqa flake8 "$notebook" --show-source --extend-ignore=W391,E501,F821,E402,F404,W503,W291,E203 --per-file-ignores='notebooks/official/template_notebooks/bigquery_command_line_tool.ipynb:E999,E111,E113' --nbqa-mutate
+                python3 -m nbqa flake8 "$notebook" --show-source --extend-ignore=W391,E501,F821,E402,F404,W503,W291,E203 --nbqa-mutate --nbqa-exclude='notebooks/official/template_notebooks/bigquery_command_line_tool.ipynb'
                 FLAKE8_RTN=$?                 
             fi
 
