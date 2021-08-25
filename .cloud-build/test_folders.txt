@@ -1,1 +1,3 @@
 bigquery-notebooks/notebooks/official
+bigquery-notebooks/notebooks/notebook_template.ipynb
+
