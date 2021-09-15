@@ -89,10 +89,10 @@ if [ ${#notebooks[@]} -gt 0 ]; then
                 python3 -m black "$notebook"
                 BLACK_RTN=$?            
                 echo "Running pyupgrade..."
-                python3 -m nbqa pyupgrade "$notebook"
+                python3 -m nbqa pyupgrade "$notebook" --nbqa-mutate
                 PYUPGRADE_RTN=$?
                 echo "Running isort..."
-                python3 -m nbqa isort "$notebook"
+                python3 -m nbqa isort "$notebook" --nbqa-mutate
                 ISORT_RTN=$?
                 echo "Running nbfmt..."
                 python3 -m tensorflow_docs.tools.nbfmt --remove_outputs "$notebook"
