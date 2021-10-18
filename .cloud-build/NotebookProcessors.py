@@ -14,7 +14,7 @@
 # limitations under the License.
 from nbconvert.preprocessors import Preprocessor
 from typing import Dict
-import update_notebook_variables
+import UpdateNotebookVariables
 
 
 class RemoveNoExecuteCells(Preprocessor):
@@ -40,7 +40,7 @@ class UpdateVariablesPreprocessor(Preprocessor):
         # VARIABLE_NAME = '[description]'
 
         for variable_name, variable_value in replacement_map.items():
-            content = update_notebook_variables.get_updated_value(
+            content = UpdateNotebookVariables.get_updated_value(
                 content=content,
                 variable_name=variable_name,
                 variable_value=variable_value,
@@ -53,8 +53,7 @@ class UpdateVariablesPreprocessor(Preprocessor):
         for cell in notebook.cells:
             if cell.cell_type == "code":
                 cell.source = self.update_variables(
-                    content=cell.source,
-                    replacement_map=self._replacement_map,
+                    content=cell.source, replacement_map=self._replacement_map,
                 )
 
             executable_cells.append(cell)
