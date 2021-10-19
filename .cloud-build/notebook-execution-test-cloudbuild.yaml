@@ -25,8 +25,10 @@ steps:
   - name: 'gcr.io/cloud-devrel-public-resources/python-samples-testing-docker:latest'
     entrypoint: /bin/sh
     args:
-    - -c
-    - 'python3 -m pip freeze && python3 .cloud-build/ExecuteChangedNotebooks.py --test_paths_file "${_TEST_PATHS_FILE}" --base_branch "${_FORCED_BASE_BRANCH}" --output_folder ${BUILD_ID} --variable_project_id ${PROJECT_ID} --variable_region ${_GCP_REGION}'
+    - '-c'
+    - |
+    python3 -m pip freeze && python3 .cloud-build/ExecuteChangedNotebooks.py \
+    --test_paths_file "${_TEST_PATHS_FILE}" --base_branch "${_FORCED_BASE_BRANCH}" --output_folder ${BUILD_ID} --variable_project_id ${PROJECT_ID} --variable_region ${_GCP_REGION}
     env:
     - 'IS_TESTING=1'
   # Manually copy artifacts to GCS
