@@ -1,0 +1,16 @@
+docker:
+  image: gcr.io/cloud-devrel-public-resources/owlbot-nodejs:latest
+
+deep-remove-regex:
+  - /src
+
+deep-preserve-regex:
+  - /src/v1p7beta1
+
+deep-copy-regex:
+  - source: /google/cloud/asset/(.*)/.*-nodejs/(.*)
+    dest: /src/$1/$2
+  - source: /google/cloud/asset/(v2)/.*-nodejs/(.*)
+    dest: /src/$1/$2
+
+begin-after-commit-hash: db31e3ff07d737b61ce968625aabbf660501688c
