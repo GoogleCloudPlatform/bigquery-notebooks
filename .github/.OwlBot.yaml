@@ -1,0 +1,4 @@
+docker:
+  image: gcr.io/cloud-devrel-public-resources/owlbot-python:latest
+
+begin-after-commit-hash: db31e3ff07d737b61ce968625aabbf660501688c
